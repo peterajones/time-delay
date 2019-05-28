@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Time Delayed CSS Animations</title>
+    <style>
+      #container {
+        position: relative;
+        top: 60px;
+        width: 600px;
+        min-height: 400px;
+
+        margin: 0 auto;
+        text-align: center;
+        border: 1px solid #ccc;
+        font-family: Arial, sans-serif;
+      }
+      h3 {
+        position: relative;
+        top: 60px;
+        width: 70%;
+        margin: 20px auto;
+        opacity: 1;
+        animation: 3s ease-in 2s normal forwards 1 fadeOut;
+      }
+      .x {
+        position: absolute;
+        top: -26px;
+        right: -26px;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 40px;
+        font-family: Arial, sans-serif;
+        padding: 0px;
+        background-color: #000;
+        width: 44px;
+        border-radius: 50%;
+        border-color: #ccc;
+        border-width: 6px;
+        border-style: solid;
+        color: #fff;
+        opacity: 0;
+        animation: 3s ease-in 2s normal forwards 1 fadeIn;
+        box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.5);
+      }
+      .x a {
+        text-decoration: none;
+        color: #fff;
+      }
+      p {
+        opacity: 0;
+        animation: 1s ease-in 5s normal forwards fadeIn;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="wrapper">
+        <h3>I'm an annoying advertisment that won't let you continue until the X shows up...</h3>
+        <div class="x"><a href="#" onclick="startOver();">X</a></div>
+        <p>Click the 'X' to continue...</p>
+      </div>
+    </div>
+    <script>
+      function startOver() {
+        location.reload();
+      }
+    </script>
+  </body>
+</html>
